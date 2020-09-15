@@ -1,17 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [amount, setAmount] = useState('')
+  const [percentage, setPercentage] = useState('')
+  const [tip, setTip] = useState('Tip Goes Here')
+
   return (
     <div className="App">
-      {/* Amout */}
-      <input type="text" />
+      {/* Amount */}
+      <input type="text" placeholder="Please add the Amount" value={amount} onChange={e => setAmount(e.target.value)} />
       {/* Percentage */}
-      <input type="text" />
+      <input type="text" placeholder="Please add the percentage" value={percentage} onChange={e => setPercentage(e.target.value)} />
       {/* Output */}
+      <h1>{tip}</h1>
     </div>
   );
 }
